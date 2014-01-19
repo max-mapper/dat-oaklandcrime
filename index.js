@@ -2,7 +2,6 @@ var port = process.env.PORT || 8080
 
 var FTP = require("jsftp")
 var Dat = require('dat')
-var timr = require('timr')
 
 var dat = new Dat('./data', function ready(err) {
   dat.init(function(err) {
