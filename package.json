@@ -6,8 +6,7 @@
   },
   "dependencies": {
     "dat": "~2.4.3",
-    "jsftp": "~1.2.1",
-    "timr": "~0.1.8"
+    "jsftp": "~1.2.1"
   },
   "license": "BSD"
 }

@@ -1,16 +1,14 @@
-var host = process.env.PORT ? '0.0.0.0' : '127.0.0.1'
 var port = process.env.PORT || 8080
 
 var FTP = require("jsftp")
 var Dat = require('dat')
 var timr = require('timr')
-var scheduler = timr()
 
 var dat = new Dat('./data', function ready(err) {
   dat.init(function(err) {
     if (err) console.error(err)
     dat.serve({port: port}, function() {
-      scheduler().every(1).hours().run(fetch)
+      setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
     })
   })  
 })
@@ -44,5 +42,6 @@ function fetch() {
     })
     
     socket.resume()
+    
   })
 }
