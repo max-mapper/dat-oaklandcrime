@@ -38,6 +38,7 @@ function fetch() {
     
     writeStream.on('close', function() {
       console.log(JSON.stringify({"finished": new Date()}))
+      ftp.destroy()
     })
     
     socket.resume()
