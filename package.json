@@ -5,7 +5,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "dat": "~2.4.3",
+    "dat": "~2.9.0",
     "jsftp": "~1.2.1"
   },
   "license": "BSD"

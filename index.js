@@ -3,13 +3,11 @@ var port = process.env.PORT || 8080
 var FTP = require("jsftp")
 var Dat = require('dat')
 
-var dat = new Dat('./data', function ready(err) {
-  dat.init(function(err) {
-    if (err) console.error(err)
-    dat.serve({port: port}, function() {
-      setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
-    })
-  })  
+var dat = new Dat('./data', {port: port}, function ready(err) {
+  if (err) return console.error(err)
+  console.log("listening on", port)
+  setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
+  fetch()
 })
 
 function fetch() {
