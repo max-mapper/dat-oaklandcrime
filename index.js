@@ -34,7 +34,7 @@ function fetch() {
       console.log('Error', e)
     })
     
-    writeStream.on('close', function() {
+    writeStream.on('end', function() {
       console.log(JSON.stringify({"finished": new Date()}))
       ftp.destroy()
     })

@@ -1,11 +1,11 @@
 {
   "name": "dat-oaklandcrime",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "dat": "~2.9.0",
+    "dat": "^4.1.1",
     "jsftp": "~1.2.1"
   },
   "license": "BSD"
