@@ -2,8 +2,9 @@ var port = process.env.PORT || 8080
 
 var FTP = require("jsftp")
 var Dat = require('dat')
+var hyperlevel = require('leveldown-hyper')
 
-var dat = new Dat('./data', {port: port}, function ready(err) {
+var dat = new Dat('./data', {port: port, backend: hyperlevel}, function ready(err) {
   if (err) return console.error(err)
   console.log("listening on", port)
   setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
