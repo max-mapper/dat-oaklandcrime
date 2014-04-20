@@ -5,7 +5,7 @@ var Dat = require('dat')
 var hyperlevel = require('leveldown-hyper')
 
 var dat = new Dat('./data', {port: port, backend: hyperlevel}, function ready(err) {
-  if (err) return console.error(err)
+  if (err) return console.error('err', err)
   console.log("listening on", port)
   setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
   fetch()

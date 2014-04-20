@@ -5,7 +5,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "dat": "^4.1.1",
+    "dat": "^4.3.1",
     "jsftp": "~1.2.1",
     "leveldown-hyper": "^0.10.1"
   },
