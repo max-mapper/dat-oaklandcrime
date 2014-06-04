@@ -5,7 +5,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "dat": "^4.5.1",
+    "dat": "maxogden/dat",
     "jsftp": "~1.2.1",
     "leveldown-hyper": "^0.10.1"
   },
