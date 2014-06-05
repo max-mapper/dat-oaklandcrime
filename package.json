@@ -6,8 +6,7 @@
   },
   "dependencies": {
     "dat": "maxogden/dat",
-    "jsftp": "~1.2.1",
-    "leveldown-hyper": "^0.10.1"
+    "jsftp": "~1.2.1"
   },
   "license": "BSD"
 }

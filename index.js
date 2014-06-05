@@ -4,13 +4,12 @@ var FTP = require("jsftp")
 var Dat = require('dat')
 
 var dat = new Dat('./data', function ready(err) {
-  if (err) return console.error('err', err)
-  console.log("listening on", port)
-  setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
-  fetch()
-  
+  if (err) return console.error('err', err)  
   dat.listen(port, function(err) {
     console.log('listening on', port)
+    setInterval(fetch, 60000 * 60 * 6) // fetch every 6 hours
+    fetch()
+    
   })
 })
 
@@ -30,12 +29,12 @@ function fetch() {
       hash: true
     })
     
-    socket.pipe(writeStream).on('data', function(c) {
-      if (!c.existed) console.log(c)
-    })
+    socket.pipe(writeStream)
+    
+    dat.progressLog(writeStream, 'Wrote', 'Write finished.')
     
     writeStream.on('error', function(e) {
-      console.log('Error', e)
+      console.log('Error', e, e.stack)
     })
     
     writeStream.on('end', function() {
